@@ -4,7 +4,7 @@ package br.com.reges.alunos;
  * Classe que testa a implementação da Classe Aluno
  * 
  * @author Lucas Nascimento
- *
+ * 
  */
 public class AlunoTeste {
 
@@ -49,20 +49,26 @@ public class AlunoTeste {
 		System.out.println(montaMensagemDeResultado(alunoGraduacao));
 		System.out.println(montaMensagemDeResultado(alunoPosGraduacao));
 		System.out.println(montaMensagemDeResultado(alunoGraduacao2));
-		
+
 		Aluno alunoPolimofico = (Aluno) alunoPosGraduacao;
-		
-		if (aluno instanceof Aluno){
-			//É do tipo Aluno
-		}else if (aluno instanceof AlunoDeGraduacao){
-			//É do tipo AlunoDeGraduacao
-		}else if (aluno instanceof AlunoDePosGraduacao){
-			//É do tipo AlunoDePosGraduacao
-		}else if (aluno instanceof AlunoDeGraduacaoSemTrabalho){
-			//É do tipo AlunoDeGraduacaoSemTrabalho
+
+		if (aluno instanceof Aluno) {
+			// É do tipo Aluno
+		} else if (aluno instanceof AlunoDeGraduacao) {
+			// É do tipo AlunoDeGraduacao
+		} else if (aluno instanceof AlunoDePosGraduacao) {
+			// É do tipo AlunoDePosGraduacao
+		} else if (aluno instanceof AlunoDeGraduacaoSemTrabalho) {
+			// É do tipo AlunoDeGraduacaoSemTrabalho
 		}
-		
-	
+
+		// Resolução do Exercício de 06/03/2015 --POLIMORFISMO, CAST E
+		// INSTANCEOF
+		System.out.println("\nResolução do Exercício do dia 09/02/2015");
+		System.out.println(nomeCompletoDoAluno(aluno));
+		System.out.println(nomeCompletoDoAluno(alunoGraduacao));
+		System.out.println(nomeCompletoDoAluno(alunoPosGraduacao));
+		System.out.println(nomeCompletoDoAluno(alunoGraduacao2));
 	}
 
 	/**
@@ -80,4 +86,39 @@ public class AlunoTeste {
 		return mensagem.toString();
 	}
 
+	/**
+	 * Método que retorna o nome do aluno
+	 * 
+	 * @param aluno Objeto aluno ou classes herdadas 
+	 * 
+	 * @return "NOME DO ALUNO" Retorno Padrão
+	 *         <p>
+	 *         "NOME DO ALUNO E NOTA DO TRABALHO DO SEGUNDO BIMESTRE" Caso o
+	 *         Aluno seja do tipo de Gradução
+	 * 
+	 * @author <a href="mailto:luizracoelho@gmail.com">Luiz R. A. Coelho </a>
+	 */
+	private static String nomeCompletoDoAluno(Aluno aluno) {
+		// Criar um novo StringBuilder para concatenar strings
+		StringBuilder sbNomeAluno = new StringBuilder();
+
+		// Concatenar o nome do aluno
+		sbNomeAluno.append("Nome Completo: ").append(aluno.nome).append(" ")
+				.append(aluno.sobrenome);
+
+		/* Verificar se "aluno" é instância de AlunoDeGraduação e não é
+		/ instância de AlunoDeGraduacaoSemTrabalho*/
+		if (aluno instanceof AlunoDeGraduacao
+				&& aluno instanceof AlunoDeGraduacaoSemTrabalho == false) {
+			
+			//CAST de aluno de graduação
+			AlunoDeGraduacao alunoGraduacao = (AlunoDeGraduacao) aluno;
+
+			//Concatenar nota do trabalho do segundo bimestre
+			sbNomeAluno.append(", Nota do Trabalho do Segundo Bimestre: ")
+					.append(alunoGraduacao.notaTrabalhoSegundoBimestre);
+		}
+
+		return sbNomeAluno.toString();
+	}
 }
