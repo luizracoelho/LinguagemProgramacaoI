@@ -27,9 +27,8 @@ public class exerc10 {
 				System.out.println("O Número Está Entre 20 e 90.");
 			else
 				System.out.println("O Número Não Está Entre 20 e 90.");
-		} catch (Exception ex) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

@@ -39,9 +39,8 @@ public class exerc05 {
 			System.out.println(String.format(
 					"Números em ordem crescente [%d, %d].", numA, numB));
 
-		} catch (Exception exc) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

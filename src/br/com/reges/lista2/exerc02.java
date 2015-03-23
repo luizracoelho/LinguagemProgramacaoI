@@ -25,9 +25,8 @@ public class exerc02 {
 			
 			System.out.println((num % 2 == 0) ? "O Número Informado é Par!"
 					: "O Número Informado é Ímpar!");
-		} catch (Exception ex) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

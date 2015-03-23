@@ -53,9 +53,9 @@ public class exerc08 {
 					"Lista de Números Ordenada: \n%.2f\n%.2f\n%.2f", num[0],
 					num[1], num[2]));
 		} catch (NegativeException e) {
-			System.err.println("[ERRO] O Número Não Pode Ser Negativo.");
+			e.printStackTrace();
 		} catch (NumberFormatException e) {
-			System.err.println("[ERRO] O Valor Informado Não é um Número.");
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

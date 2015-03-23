@@ -32,9 +32,8 @@ public class exerc04 {
 						.println(String.format("O Maior Número é %d.", num2));
 			else
 				System.out.println("Os Números São Iguais.");
-		} catch (Exception exc) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

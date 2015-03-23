@@ -27,9 +27,8 @@ public class exerc01 {
 			
 			System.out.println((num1 == num2) ? "São Iguais!"
 					: "São Diferentes!");
-		} catch (Exception exc) {
-			System.err
-					.println("[ERRO] O Valor Digitado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

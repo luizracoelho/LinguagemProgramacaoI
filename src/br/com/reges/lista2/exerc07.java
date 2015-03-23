@@ -30,7 +30,7 @@ public class exerc07 {
 			System.out.println("Digite o valor para o terceiro ponto:");
 			double posC = Double.parseDouble(teclado.nextLine());
 
-			if (posA == posB && posA == posC && posB == posC)
+			if (posA == posB && posA == posC)
 				System.out.println("Triângulo EQUILÁTERO Formado!");
 			else if (posA != posB && posA != posC && posB != posC)
 				System.out.println("Triângulo ESCALENO Formado!");
@@ -38,8 +38,7 @@ public class exerc07 {
 				System.out.println("Triângulo ISÓSCELES Formado!");
 
 		} catch (NumberFormatException e) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Real.");
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

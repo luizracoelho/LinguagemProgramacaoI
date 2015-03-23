@@ -40,13 +40,13 @@ public class exerc09 {
 		System.out.println("Digite a quantidade de faltas:");
 		aluno.setQuantFaltas(Integer.parseInt(teclado.nextLine()));
 
-		System.out.println(aluno.toString());
+		System.out.println(aluno);
 		}
 		catch (NumberFormatException e){
-			System.err.println("[ERRO] Número em Formato Incorreto!");
+			e.printStackTrace();
 		}
 		catch (RangeOutOfBoundException e){
-			System.err.println("[ERRO] Número Fora do Intervalo!");
+			e.printStackTrace();
 		}
 		finally{
 		teclado.close();

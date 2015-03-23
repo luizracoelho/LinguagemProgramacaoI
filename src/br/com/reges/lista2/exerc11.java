@@ -30,9 +30,8 @@ public class exerc11 {
 
 			System.out.println(String.format("O preço de venda é R$ %.2f.",
 					preco));
-		} catch (Exception ex) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

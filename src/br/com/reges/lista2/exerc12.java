@@ -52,10 +52,9 @@ public class exerc12 {
 					"O Valor do Salário com o Aumento é %.2f.", salario));
 
 		} catch (NegativeException e) {
-			System.err
-					.println("[ERRO] O Valor Informado Não Pode Ser Negativo.");
+			e.printStackTrace();
 		} catch (NumberFormatException e) {
-			System.err.println("[ERRO] O Valor Informado Não é um Número.");
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}

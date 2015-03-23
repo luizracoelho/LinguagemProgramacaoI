@@ -28,9 +28,8 @@ public class exerc03 {
 			System.out.println((numA % numB == 0) ? String.format(
 					"O número %d é Divisível por %d.", numA, numB) : String
 					.format("O número %d NÃO é Divisível por %d.", numA, numB));
-		} catch (Exception exc) {
-			System.err
-					.println("[ERRO] O Valor Informado Não é um Número Inteiro.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			teclado.close();
 		}
